@@ -66,6 +66,7 @@
       <module>tests</module>
       <module>artemis-features</module>
       <module>artemis-quorum-api</module>
+      <module>artemis-open-tracing-plugin</module>
       <module>artemis-quorum-ri</module>
    </modules>
 
@@ -155,6 +156,10 @@
       <paho.client.mqttv3.version>1.2.5</paho.client.mqttv3.version>
       <!-- for JakrtaEE -->
       <version.batavia>1.0.10.Final</version.batavia>
+
+      <!-- tracing -->
+      <opentelemetry.version>1.10.0-rc.2</opentelemetry.version>
+      <opentelemetry-alpha.version>1.10.0-alpha-rc.2</opentelemetry-alpha.version>
 
       <!-- used on tests -->
       <groovy.version>2.5.10</groovy.version>
@@ -945,6 +950,23 @@
             <scope>test</scope>
             <!-- License: EPL 2.0 -->
          </dependency>
+
+         <!-- ### START opentelemetry Dependencies ### -->
+         <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-bom</artifactId>
+            <version>${opentelemetry.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
+         <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-bom-alpha</artifactId>
+            <version>${opentelemetry-alpha.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
+         <!-- ### END opentelemetry Dependencies ### -->
       </dependencies>
 
    </dependencyManagement>
